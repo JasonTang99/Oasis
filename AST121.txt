@@ -1,0 +1,10 @@
+AST121
+Clicker Quizzes,18
+Midterm,10
+PS1,7
+PS2,7
+PS3,7
+PS4,7
+PS5,7
+PS6,7
+Final,30
