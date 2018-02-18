@@ -1,41 +1,52 @@
 """Does a math"""
 import csv
 
-inputfile = "AST121.csv"
+AST = "AST121.csv"
 
-with open(inputfile) as csvfile:
-	readCSV = csv.reader(csvfile, delimiter = ",")
+course = ""
+work = []
+scales = []
+grade = []
+
+def readfile(inputfile):
 	course = ""
 	work = []
 	scales = []
 
-	for row in readCSV:
-		if len(row) == 0:
-			print("empty row")
-		elif len(row) == 1:
-			course = row[0]
-		else:
-			work.append(row[0])
-			scales.append(row[1])
+	with open(inputfile) as csvfile:
+		readCSV = csv.reader(csvfile, delimiter = ",")
+
+		for row in readCSV:
+			if len(row) == 0:
+				print("empty row")
+			elif len(row) == 1:
+				course = row[0]
+			else:
+				work.append(row[0])
+				scales.append(row[1])
 
 	print(course)
 	print(work)
 	print(scales)
 
-	grade = []
-
+def getsomeinput():
 	total_got = 0
 	total_mark = 0
 
 	c = 0
-
+	
+	print("")
+	print("Enter the values as percentages")
+	print("")
 	print("For something you dont know yet just press enter")
+	print("")
+
 	while c < len(work):
 		while True: 
 			g = input("What did you get for " + work[c] + "? ")
-			if g.isdigit():
+			if g.replace(".", "", 1).isdigit():
 				grade.append(g)
-				total_got += int(g)
+				total_got += ( float(g) * int(scales[c]) ) / 100
 				total_mark += int(scales[c])
 				break 
 			if g == "":
@@ -48,5 +59,7 @@ with open(inputfile) as csvfile:
 	print(grade)
 	print("Your current percentage is " + str(lol))
 
-	# Add more writing fuunction
 
+if __name__ == "__main__":
+	readfile(AST)
+	getsomeinput()
