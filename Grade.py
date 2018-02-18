@@ -9,10 +9,6 @@ scales = []
 grade = []
 
 def readfile(inputfile):
-	course = ""
-	work = []
-	scales = []
-
 	with open(inputfile) as csvfile:
 		readCSV = csv.reader(csvfile, delimiter = ",")
 
