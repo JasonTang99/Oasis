@@ -1,5 +1,6 @@
 """Does a math"""
 import csv
+from fractions import Fraction
 
 AST = "AST121.csv"
 
@@ -32,7 +33,7 @@ def getsomeinput():
 	c = 0
 	
 	print("")
-	print("Enter the values as percentages")
+	print("Enter the values as decimals or fractions")
 	print("")
 	print("For something you dont know yet just press enter")
 	print("")
@@ -40,9 +41,9 @@ def getsomeinput():
 	while c < len(work):
 		while True: 
 			g = input("What did you get for " + work[c] + "? ")
-			if g.replace(".", "", 1).isdigit():
+			if g.replace(".", "", 1).replace("/", "", 1).isdigit():
 				grade.append(g)
-				total_got += ( float(g) * int(scales[c]) ) / 100
+				total_got += ( float(sum(Fraction(s) for s in g.split())) * int(scales[c]) ) / 100
 				total_mark += int(scales[c])
 				break 
 			if g == "":
@@ -50,7 +51,7 @@ def getsomeinput():
 				break
 		c += 1
 
-	lol = total_got/total_mark * 100
+	lol = total_got/total_mark * 100 * 100
 
 	print(grade)
 	print("Your current percentage is " + str(lol))
