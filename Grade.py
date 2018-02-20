@@ -1,7 +1,5 @@
-"""Does a math"""
 import csv
 from fractions import Fraction
-# from typing import List
 
 class Reader:
 	filename = ""
