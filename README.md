@@ -15,4 +15,6 @@ I want to add functionality for (in order of time):
 - Calculation of how high a grade is needed for a certain assignment in order to achieve a final grade of some amount (ex. How much do I need on the final worth 30% of my grade if I have a current grade of 70% to get 85%?)
 - Change all of this into a published android app that anyone can use
 
-Once again
+Once again, Thanks for reading,
+
+Jason
