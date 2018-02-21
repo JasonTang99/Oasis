@@ -36,6 +36,7 @@ class Reader:
 		total_got = 0
 		total_mark = 0
 		c = 0
+		self.grade = []
 		
 		print("")
 		print("Enter the values as decimals")
@@ -76,19 +77,72 @@ class Reader:
 		p = total1 / total2
 		print(p)
 
-
-
-	def writeGrades(self):
-		f = open(self.filename, "a+")
+	def newGrades(self):
+		f = open(self.filename, "w")
+		f.write(self.course[0])
+		f.write("\n" + listToCSV(self.work))
+		f.write("\n" + listToCSV(self.scales))
 		f.write("\n" + listToCSV(self.grade))
+
+	def fillIn(self):
+		a = 0
+		while a < len(self.grade):
+			if self.grade[a] == '':
+				g = input("What did you get for " + self.work[a] + "? ")
+				if g.replace(".", "", 1).replace("/", "", 1).isdigit():
+					g = float(sum(Fraction(s) for s in g.split()))
+					self.grade[a] = g
+			a += 1
+
+	def gradeStatus(self) -> int:
+		# Returns 0,1,2 if the grade variable is empty, almost filled, and filled, respectively
+		num_elements = 0
+
+		for a in self.grade:
+			if a != "":
+				num_elements += 1
+
+		if num_elements == 0:
+			return 0
+		elif num_elements == len(self.grade):
+			return 2
+		else:
+			return 1
 
 	def run(self):
 		self.readfile()
-		if self.grade == []:
+		a = self.gradeStatus()
+		if a == 0:
 			self.getsomeinput()
-			self.writeGrades()
-		else:
-			self.calcGrade()
+			self.newGrades()
+		elif a == 1:
+			print("1 = Fill in the missing grades")
+			print("2 = Calculate the current grade")
+			print("3 = Rewrite the grades")
+			print("")
+			num = input("What do you want to do?")
+			if num == "1":
+				self.fillIn()
+				self.newGrades()
+			elif num == "2":
+				self.calcGrade()
+			elif num == "3":
+				self.getsomeinput()
+				self.newGrades()
+			else:
+				print("Pick a valid number plz")
+		elif a == 2:
+			print("1 = Calculate the current grade")
+			print("2 = Rewrite the grades")
+			print("")
+			num = input("What do you want to do?")
+			if num == "1":
+				self.calcGrade()
+			elif num == "2":
+				self.getsomeinput()
+				self.newGrades()
+			else:
+				print("Pick a valid number plz")
 
 
 def listToCSV(lst) -> str:
@@ -123,6 +177,7 @@ def freeWill() -> str:
 		return "BIO130.csv"
 	else:
 		print("Go die")
+		return freeWill()
 
 if __name__ == "__main__":
 	inp = freeWill()
