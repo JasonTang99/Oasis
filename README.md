@@ -22,5 +22,7 @@ Thanks for reading,
 Jason
 
 Special Credit to Mr. Choi who helped me do the math and coding (I'm braindead)
+
 Special credit to Ms. Vleck who was there
+
 And Lance Oribello Noel Gonzalez Lance Lance Noel Oribello is just special
