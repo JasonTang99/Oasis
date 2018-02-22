@@ -9,10 +9,8 @@ class Reader:
 	scales = []
 	grade = []
 
-	def __init__(self, filename: str):
+	def __init__(self, filename):
 		self.filename = filename
-		print("Initializing Skynet v0.23")
-		print("")
 
 	def readfile(self):
 		with open(self.filename) as csvfile:
@@ -138,6 +136,10 @@ class Reader:
 			hm = (final - total_grade) * 100 / float(self.scales[missing_index])  
 			print("You need " + str(hm) + " on your " + self.work[missing_index] + " in order to get a final mark of " + str(final))
 
+	def test(self):
+		self.readfile()
+		print(self.howMuch())
+
 	def run(self):
 		self.readfile()
 		a = self.gradeStatus()
@@ -185,10 +187,6 @@ class Reader:
 			print("Pick an option please")
 			self.run()
 
-	def test(self):
-		self.readfile()
-		print(self.howMuch())
-
 
 def listToCSV(lst: List) -> str:
 	strings = ""
@@ -196,6 +194,36 @@ def listToCSV(lst: List) -> str:
 		strings += str(a) + ","
 	strings = strings[0:len(strings) - 1]
 	return strings
+
+def newFile() -> str:
+	name = input("What do you want to call the file? ") + ".csv"
+	f = open(name, "w+")
+
+	course = []
+	course.append(input("What class is this for? "))
+
+	assigns = []
+	print("What assignments do you have for this class? ")
+	add = ""
+	while True:
+		add = input("Assignment: ")
+		if add == "":
+			break
+		assigns.append(add)
+
+	scale = []
+	for werk in assigns:
+		scale.append(input("How much is " + werk + " worth? "))
+
+	a = Reader(name)
+
+	a.course = course
+	a.work = assigns
+	a.scales = scale
+	a.getsomeinput()
+	a.newGrades()
+
+	return name
 
 def freeWill() -> str:
 	
@@ -205,6 +233,7 @@ def freeWill() -> str:
 	print("4 = MAT223")
 	print("5 = CSC165")
 	print("6 = BIO130")
+	print("7 = Write a new file")
 
 	a = input("What marks do you want? ")
 
@@ -220,6 +249,8 @@ def freeWill() -> str:
 		return "CSC165.csv"
 	elif a == "6":
 		return "BIO130.csv"
+	elif a == "7":
+		return newFile()
 	else:
 		print("Go die")
 		return freeWill()
