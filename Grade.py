@@ -1,4 +1,5 @@
 import csv
+import os
 from fractions import Fraction
 from typing import List
 
@@ -255,8 +256,47 @@ def freeWill() -> str:
 		print("Go die")
 		return freeWill()
 
+def readCurrentDir() -> List:
+	lst = []
+	for a in os.listdir("."):
+		if ".csv" in a:
+			lst.append(a) 
+	# print(lst) 
+	return lst
+
+def freeWill2() -> str:
+	a = 0
+	lst = readCurrentDir()
+	dictionary = {}
+
+	while a < len(lst):
+		print(str(a + 1) + " = " + str(lst[a].strip('.csv')) )
+		dictionary[str(a + 1)] = str(lst[a])
+		a += 1
+
+	print(str(a + 1) + " = Write a new file")
+
+	# print(str(dictionary))
+	print("")
+
+	want = input("What marks do you want? ")
+
+	print("")
+
+
+	if int(want) < len(dictionary):
+		return dictionary[want]
+	elif int(want) == len(dictionary):
+		return newFile()
+	else:
+		print("Go die")
+		print("")
+		return freeWill2()
+
 if __name__ == "__main__":
-	inp = freeWill()
+	inp = freeWill2()
 	r = Reader(inp)
 	r.run()
 	# r.test()
+	# readCurrentDir()
+	# print(freeWill2())
