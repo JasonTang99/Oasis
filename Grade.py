@@ -116,7 +116,7 @@ class Reader:
 		else:
 			return 1
 
-	def howMuch(self) -> float:
+	def howMuch(self):
 		counter = 0
 		missing_index = 0
 		a = 0
@@ -132,14 +132,11 @@ class Reader:
 
 		if counter > 1:
 			print("Fill up the grades until only one is left blank plz")
+			self.fillIn()
 		else:
 			final = float(input("What final grade do you want? "))
-			return float( (final - total_grade) * 100 / float(self.scales[missing_index])  )
-
-
-
-
-		
+			hm = (final - total_grade) * 100 / float(self.scales[missing_index])  
+			print("You need " + str(hm) + " on your " + self.work[missing_index] + " in order to get a final mark of " + str(final))
 
 	def run(self):
 		self.readfile()
@@ -153,6 +150,7 @@ class Reader:
 			print("1 = Fill in the missing grades")
 			print("2 = Calculate the current grade")
 			print("3 = Rewrite the grades")
+			print("4 = Calculate how much you need")
 			print("")
 			num = input("What do you want to do? ")
 			if num == "1":
@@ -163,6 +161,8 @@ class Reader:
 			elif num == "3":
 				self.getsomeinput()
 				self.newGrades()
+			elif num == "4":
+				self.howMuch()
 			else:
 				print("Pick a valid option please")
 				self.run()
@@ -227,5 +227,5 @@ def freeWill() -> str:
 if __name__ == "__main__":
 	inp = freeWill()
 	r = Reader(inp)
-	# r.run()
-	r.test()
+	r.run()
+	# r.test()

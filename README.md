@@ -9,7 +9,7 @@ This calculates your current mark based off your class syllabus and current know
 
 It has the option to fill in missing grades or rewrite the grades entirely.
 
-- Calculation of how high a grade is needed for a certain assignment in order to achieve a final grade of some amount (ex. How much do I need on the final worth 30% of my grade if I have a current grade of 70% to get 85%?)
+It can calculate of how high a grade is needed for a certain assignment in order to achieve a final grade of some amount (ex. How much do I need on the final worth 30% of my grade if I have a current grade of 70% to get 85%?)
 
 ### Eventually
 
@@ -21,8 +21,8 @@ Thanks for reading,
 
 Jason
 
-Special Credit to Mr. Choi who helped me do the math and coding (I'm braindead)
+Special Credit to David Choi who helped me math and check over my code (I'm braindead)
 
-Special credit to Ms. Vleck who was there
+Special credit to Hayley Vleck who was there and asked for credit
 
 And Lance Oribello Noel Gonzalez Lance Lance Noel Oribello is just special
