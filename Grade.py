@@ -1,5 +1,6 @@
 import csv
 from fractions import Fraction
+from typing import List
 
 class Reader:
 	filename = ""
@@ -10,6 +11,8 @@ class Reader:
 
 	def __init__(self, filename: str):
 		self.filename = filename
+		print("Initializing Skynet v0.23")
+		print("")
 
 	def readfile(self):
 		with open(self.filename) as csvfile:
@@ -17,20 +20,21 @@ class Reader:
 			b = 0
 
 			for row in readCSV:
-				if b == 0 and row != "":
-					self.course = row
-				elif b == 1 and row != "":
-					self.work = row
-				elif b == 2 and row != "":
-					self.scales = row
-				elif b == 3 and row != "":
-					self.grade = row
+				if row != "":
+					if   b == 0:
+						self.course = row
+					elif b == 1:
+						self.work   = row
+					elif b == 2:
+						self.scales = row
+					elif b == 3:
+						self.grade  = row
 				b += 1
 
-		print(self.course)
-		print(self.work)
-		print(self.scales)
-		print(self.grade)
+		print("Course: "      + str(self.course) )
+		print("Assignments: " + str(self.work)   )
+		print("Scales: "      + str(self.scales) )
+		print("Grades: "      + str(self.grade)  )
 
 	def getsomeinput(self):
 		total_got = 0
@@ -58,10 +62,10 @@ class Reader:
 					break
 			c += 1
 
-		lol = total_got/total_mark * 100
+		per = total_got/total_mark * 100
 
 		print(self.grade)
-		print("Your current percentage is " + str(lol))
+		print("Your current percentage is " + str(per))
 
 	def calcGrade(self):
 		a = 0
@@ -74,8 +78,11 @@ class Reader:
 				total2 += float(self.scales[a])
 			a += 1
 
-		p = total1 / total2
-		print(p)
+		if total2 != 0:
+			p = total1 / total2
+			print(p)
+		else:
+			print("Make sure your csv file has proper scales inputed")
 
 	def newGrades(self):
 		f = open(self.filename, "w")
@@ -109,18 +116,45 @@ class Reader:
 		else:
 			return 1
 
+	def howMuch(self) -> float:
+		counter = 0
+		missing_index = 0
+		a = 0
+		total_grade = 0
+
+		while a < len(self.grade):
+			if self.grade[a] == '':
+				counter += 1
+				missing_index = a
+			else:
+				total_grade += float(self.grade[a]) * float(self.scales[a]) / 100.0
+			a += 1
+
+		if counter > 1:
+			print("Fill up the grades until only one is left blank plz")
+		else:
+			final = float(input("What final grade do you want? "))
+			return float( (final - total_grade) * 100 / float(self.scales[missing_index])  )
+
+
+
+
+		
+
 	def run(self):
 		self.readfile()
 		a = self.gradeStatus()
+
 		if a == 0:
 			self.getsomeinput()
 			self.newGrades()
+
 		elif a == 1:
 			print("1 = Fill in the missing grades")
 			print("2 = Calculate the current grade")
 			print("3 = Rewrite the grades")
 			print("")
-			num = input("What do you want to do?")
+			num = input("What do you want to do? ")
 			if num == "1":
 				self.fillIn()
 				self.newGrades()
@@ -130,22 +164,33 @@ class Reader:
 				self.getsomeinput()
 				self.newGrades()
 			else:
-				print("Pick a valid number plz")
+				print("Pick a valid option please")
+				self.run()
+
 		elif a == 2:
 			print("1 = Calculate the current grade")
 			print("2 = Rewrite the grades")
 			print("")
-			num = input("What do you want to do?")
+			num = input("What do you want to do? ")
 			if num == "1":
 				self.calcGrade()
 			elif num == "2":
 				self.getsomeinput()
 				self.newGrades()
 			else:
-				print("Pick a valid number plz")
+				print("Pick a valid number please")
+				self.run()
+
+		else:
+			print("Pick an option please")
+			self.run()
+
+	def test(self):
+		self.readfile()
+		print(self.howMuch())
 
 
-def listToCSV(lst) -> str:
+def listToCSV(lst: List) -> str:
 	strings = ""
 	for a in lst:
 		strings += str(a) + ","
@@ -161,7 +206,7 @@ def freeWill() -> str:
 	print("5 = CSC165")
 	print("6 = BIO130")
 
-	a = input("What marks do you want?")
+	a = input("What marks do you want? ")
 
 	if a == "1":
 		return "AST121.csv"
@@ -182,4 +227,5 @@ def freeWill() -> str:
 if __name__ == "__main__":
 	inp = freeWill()
 	r = Reader(inp)
-	r.run()
+	# r.run()
+	r.test()
