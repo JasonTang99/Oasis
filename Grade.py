@@ -42,7 +42,7 @@ class Reader:
 		self.grade = []
 		
 		print("")
-		print("Enter the values as decimals")
+		print("Enter the values as decimals or fractions or whatever")
 		print("")
 		print("For something you dont know yet just press enter")
 		print("")
@@ -50,8 +50,8 @@ class Reader:
 		while c < len(self.work):
 			while True:
 				g = input("What did you get for " + self.work[c] + "? ")
-				if g.replace(".", "", 1).replace("/", "", 1).isdigit():
-					g = float(sum(Fraction(s) for s in g.split()))
+				if isNum(g):
+					g = intoNum(g)
 					self.grade.append(g)
 					total_got += ( g * float(self.scales[c]) ) / 100
 					total_mark += float(self.scales[c])
@@ -95,10 +95,11 @@ class Reader:
 		while a < len(self.grade):
 			if self.grade[a] == '':
 				g = input("What did you get for " + self.work[a] + "? ")
-				if g.replace(".", "", 1).replace("/", "", 1).isdigit():
-					g = float(sum(Fraction(s) for s in g.split()))
+				if isNum(g):
+					g = intoNum(g)
 					self.grade[a] = g
 			a += 1
+		self.calcGrade()
 
 	def gradeStatus(self) -> int:
 		# Returns 0,1,2 if the grade variable is empty, almost filled, and filled, respectively
@@ -188,6 +189,11 @@ class Reader:
 			print("Pick an option please")
 			self.run()
 
+		print("")
+		again = input("Would you like to do another thing? (Press any key but enter for yes)")
+
+		if again != "":
+			self.run()
 
 def listToCSV(lst: List) -> str:
 	strings = ""
@@ -227,44 +233,6 @@ def newFile() -> str:
 	return name
 
 def freeWill() -> str:
-	
-	print("1 = AST121")
-	print("2 = MAT137 Version 1")
-	print("3 = MAT137 Version 2")
-	print("4 = MAT223")
-	print("5 = CSC165")
-	print("6 = BIO130")
-	print("7 = Write a new file")
-
-	a = input("What marks do you want? ")
-
-	if a == "1":
-		return "AST121.csv"
-	elif a == "2":
-		return "MAT137-1.csv"
-	elif a == "3":
-		return "MAT137-2.csv"
-	elif a == "4":
-		return "MAT223.csv"
-	elif a == "5":
-		return "CSC165.csv"
-	elif a == "6":
-		return "BIO130.csv"
-	elif a == "7":
-		return newFile()
-	else:
-		print("Go die")
-		return freeWill()
-
-def readCurrentDir() -> List:
-	lst = []
-	for a in os.listdir("."):
-		if ".csv" in a:
-			lst.append(a) 
-	# print(lst) 
-	return lst
-
-def freeWill2() -> str:
 	a = 0
 	lst = readCurrentDir()
 	dictionary = {}
@@ -291,12 +259,41 @@ def freeWill2() -> str:
 	else:
 		print("Go die")
 		print("")
-		return freeWill2()
+		return freeWill()
+
+def readCurrentDir() -> List:
+	lst = []
+	for a in os.listdir("."):
+		if ".csv" in a:
+			lst.append(a) 
+	# print(lst) 
+	return lst
+
+def isNum(s) -> bool:
+	if "/" in str(s):
+		s = s.replace("/", "", 1)
+	num = True
+	try:
+		complex(s)
+	except ValueError:
+		num = False
+	return num
+
+def intoNum(s: str) -> float:
+	flo = 0.0
+	if "/" in s:
+		lst = s.split("/")
+		flo = float(lst[0])/float(lst[1]) * 100
+	else:
+		flo = float(s)
+
+	return flo
 
 if __name__ == "__main__":
-	inp = freeWill2()
+	inp = freeWill()
 	r = Reader(inp)
 	r.run()
-	# r.test()
-	# readCurrentDir()
-	# print(freeWill2())
+	# print(float(Fraction("100.2/345.4")))
+	# print(isNum(212.2/4.3))
+
+
