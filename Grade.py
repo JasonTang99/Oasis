@@ -3,6 +3,8 @@ import os
 from fractions import Fraction
 from typing import List
 
+# This is the linux edited edition
+
 class Reader:
 	filename = ""
 	course = ""
@@ -40,7 +42,7 @@ class Reader:
 		total_mark = 0
 		c = 0
 		self.grade = []
-		
+
 		print("")
 		print("Enter the values as decimals or fractions or whatever")
 		print("")
@@ -135,7 +137,7 @@ class Reader:
 			self.fillIn()
 		else:
 			final = float(input("What final grade do you want? "))
-			hm = (final - total_grade) * 100 / float(self.scales[missing_index])  
+			hm = (final - total_grade) * 100 / float(self.scales[missing_index])
 			print("You need " + str(hm) + " on your " + self.work[missing_index] + " in order to get a final mark of " + str(final))
 
 	def test(self):
@@ -265,8 +267,8 @@ def readCurrentDir() -> List:
 	lst = []
 	for a in os.listdir("."):
 		if ".csv" in a:
-			lst.append(a) 
-	# print(lst) 
+			lst.append(a)
+	# print(lst)
 	return lst
 
 def isNum(s) -> bool:
@@ -295,5 +297,3 @@ if __name__ == "__main__":
 	r.run()
 	# print(float(Fraction("100.2/345.4")))
 	# print(isNum(212.2/4.3))
-
-
