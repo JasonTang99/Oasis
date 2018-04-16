@@ -252,9 +252,9 @@ def freeWill() -> str:
 	print("")
 
 
-	if int(want) < len(dictionary):
+	if int(want) <= len(dictionary):
 		return dictionary[want]
-	elif int(want) == len(dictionary):
+	elif int(want) == len(dictionary) + 1:
 		return newFile()
 	else:
 		print("Go die")
