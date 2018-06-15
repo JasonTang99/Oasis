@@ -9,9 +9,7 @@ from typing import List
 
 
 class Reader:
-"""
-Main class of the program
-"""
+    """Main class of the program"""
     filename = ""
     course = ""
     work = []
@@ -22,26 +20,27 @@ Main class of the program
         self.filename = filename
 
     def readfile(self):
+        """Reads the csv file"""
         with open(self.filename) as csvfile:
-            readCSV = csv.reader(csvfile, delimiter = ",")
+            read_csv = csv.reader(csvfile, delimiter=",")
             b = 0
 
-            for row in readCSV:
+            for row in read_csv:
                 if row != "":
-                    if   b == 0:
+                    if b == 0:
                         self.course = row
                     elif b == 1:
-                        self.work   = row
+                        self.work = row
                     elif b == 2:
                         self.scales = row
                     elif b == 3:
-                        self.grade  = row
+                        self.grade = row
                 b += 1
 
-        print("Course: "      + str(self.course) )
-        print("Assignments: " + str(self.work)   )
-        print("Scales: "      + str(self.scales) )
-        print("Grades: "      + str(self.grade)  )
+        print("Course: " + str(self.course))
+        print("Assignments: " + str(self.work))
+        print("Scales: " + str(self.scales))
+        print("Grades: " + str(self.grade))
 
     def getSomeInput(self):
         total_got = 0
@@ -110,7 +109,7 @@ Main class of the program
         self.calcGrade()
 
     def gradeStatus(self) -> int:
-        # Returns 0,1,2 if the grade variable is empty, almost filled, and filled, respectively
+        """Returns 0,1,2 if the grade variable is empty, almost filled, and filled, respectively"""
         num_elements = 0
 
         for a in self.grade:
@@ -145,10 +144,6 @@ Main class of the program
             final = float(input("What final grade do you want? "))
             hm = (final - total_grade) * 100 / float(self.scales[missing_index])
             print("You need " + str(hm) + " on your " + self.work[missing_index] + " in order to get a final mark of " + str(final))
-
-    def test(self):
-        self.readfile()
-        print(self.howMuch())
 
     def run(self):
         self.readfile()
@@ -203,10 +198,13 @@ Main class of the program
         if again != "":
             self.run()
 
+
 def newFile() -> str:
+    """Creates a new csv file"""
     name = input("What do you want to call the file? ") + ".csv"
 
     if name == ".csv":
+        # In case they don't enter a name
         print("Enter a name please")
         print("-------------------------------------")
         return newFile()
@@ -242,10 +240,14 @@ def newFile() -> str:
 
         return name
 
+
 def freeWill() -> str:
     a = 0
     lst = listCurrentDir()
     dictionary = {}
+
+    if lst == []:
+        return newFile()
 
     print("0 = Write a new file")
 
@@ -268,13 +270,16 @@ def freeWill() -> str:
         print("----------------------------------")
         return freeWill()
 
+
 def listCurrentDir() -> List:
+    """Returns a list of all csv files in current directory"""
     lst = []
     for a in os.listdir("."):
         if ".csv" in a:
             lst.append(a)
     print("Reading from: " + str(lst))
     return lst
+
 
 def isNum(s) -> bool:
     """
@@ -289,6 +294,8 @@ def isNum(s) -> bool:
     True
     >>> isNum("3.9/2.8")
     True
+    >>> isNum("jazz hands///...")
+    False
     """
     if "/" in str(s):
         s = s.replace("/", "", 1)
@@ -299,6 +306,7 @@ def isNum(s) -> bool:
     except ValueError:
         num = False
     return num
+
 
 def intoNum(s: str) -> float:
     """
@@ -322,8 +330,10 @@ def intoNum(s: str) -> float:
     else:
         return float(s)
 
+
 def listToCSV(lst: List) -> str:
     """
+    Changes a list to csv format
     >>> listToCSV([1,2,3])
     '1,2,3'
     >>> listToCSV([1.0,2/4,.34])
@@ -335,8 +345,10 @@ def listToCSV(lst: List) -> str:
     strings = strings[0:len(strings) - 1]
     return strings
 
+
 def listOf100(lst: List) -> bool:
     """
+    Checks if a list sums up to 100
     >>> listOf100([1,2,3])
     False
     >>> listOf100([1.0,24,750.0/10.0])
@@ -352,6 +364,7 @@ def listOf100(lst: List) -> bool:
     if i == 100.0:
         return True
     return False
+
 
 if __name__ == "__main__":
     # inp = freeWill()
