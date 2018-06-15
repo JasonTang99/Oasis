@@ -28,7 +28,7 @@ class Reader:
             for row in read_csv:
                 if row != "":
                     if b == 0:
-                        self.course = row
+                        self.course = row[0]
                     elif b == 1:
                         self.work = row
                     elif b == 2:
@@ -49,9 +49,9 @@ class Reader:
         self.grade = []
 
         print("")
-        print("Enter the values as decimals or fractions or whatever")
+        print("Enter the values as numbers or fractions")
         print("")
-        print("For something you dont know yet just press enter")
+        print("For something you don't know yet just hit enter")
         print("")
 
         while c < len(self.work):
@@ -60,18 +60,16 @@ class Reader:
                 if isNum(g):
                     g = intoNum(g)
                     self.grade.append(g)
-                    total_got += ( g * float(self.scales[c]) ) / 100
-                    total_mark += float(self.scales[c])
                     break
                 if g == "":
                     self.grade.append(g)
                     break
             c += 1
 
-        per = total_got/total_mark * 100
-
+        print("")
+        print("Your current grades are:")
         print(self.grade)
-        print("Your current percentage is " + str(per))
+        print("")
 
     def calcGrade(self):
         a = 0
@@ -92,7 +90,7 @@ class Reader:
 
     def newGrades(self):
         f = open(self.filename, "w")
-        f.write(self.course[0])
+        f.write(self.course)
         f.write("\n" + listToCSV(self.work))
         f.write("\n" + listToCSV(self.scales))
         f.write("\n" + listToCSV(self.grade))
@@ -138,7 +136,7 @@ class Reader:
             a += 1
 
         if counter > 1:
-            print("Fill up the grades until only one is left blank plz")
+            print("Fill up the grades until only one is left blank please")
             self.fillIn()
         else:
             final = float(input("What final grade do you want? "))
@@ -247,6 +245,8 @@ def freeWill() -> str:
     dictionary = {}
 
     if lst == []:
+        print("Looks like theres no csv files in here")
+        print("Let's make a new one :)")
         return newFile()
 
     print("0 = Write a new file")
@@ -261,10 +261,10 @@ def freeWill() -> str:
 
     want = int(input("What marks do you want? "))
 
-    if int(want) <= len(dictionary):
-        return dictionary[want]
-    elif int(want) == len(dictionary) + 1:
+    if int(want) == 0:
         return newFile()
+    elif int(want) <= len(dictionary):
+        return dictionary[want]
     else:
         print("Pick one of the choices please")
         print("----------------------------------")
@@ -367,9 +367,9 @@ def listOf100(lst: List) -> bool:
 
 
 if __name__ == "__main__":
-    # inp = freeWill()
-    # r = Reader(inp)
-    # r.run()
-    import doctest
-    doctest.testmod()
-    print(freeWill())
+    read = freeWill()
+    r = Reader(read)
+    r.run()
+    # import doctest
+    # doctest.testmod()
+    # print(freeWill())

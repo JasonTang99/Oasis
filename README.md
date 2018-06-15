@@ -16,14 +16,25 @@ Added the ability to add your own csv files and have those options show up in th
 ### Eventually
 
 I want to add functionality for (in order of time):
-- Change all of this into a published android app that anyone can use
+- Learn how to develop android
+- Change all the methods to java
+- Turn this into a published android app that anyone can use
+
+# Instructions
+
+1. Download/Copy the python code, everything is contained in the "grade.py" file
+2. Run it in a compiler (using python 3.6 or higher)
+3. Follow on screen instructions
+4. Do well in your classes
 
 Thanks for reading,
 
 Jason
 
+--------------------------------------
+
 Special Credit to David Choi who helped me math and check over my code (I'm braindead)
 
 Special credit to Hayley Vleck who was there and asked for credit
 
-And Noel Lance Gonzalez Oribello is just special
+And Noel Lance Gonzalez Oribello who is just special
