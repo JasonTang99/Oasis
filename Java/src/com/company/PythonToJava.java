@@ -11,7 +11,9 @@ public class PythonToJava {
         return sum == 100.0;
     }
 
-    public static boolean isNum()
+    public static boolean isNum(String input) {
+        return input.matches("[\\d\\.\\/]*");
+    }
 
 
     public static void main(String args[]) {
@@ -22,6 +24,24 @@ public class PythonToJava {
         System.out.println(listOf100(lst1));
         System.out.println(listOf100(lst2));
         System.out.println(listOf100(lst3));
+
+        System.out.println("---------------------------");
+
+        System.out.println(isNum("1234"));
+        System.out.println(isNum("123.4"));
+        System.out.println(isNum("1.2/3.4"));
+
+        System.out.println("---------------------------");
+
+        System.out.println(isNum("12a34"));
+        System.out.println(isNum("123a.4"));
+        System.out.println(isNum("1.2/a3.4"));
+
+        System.out.println("---------------------------");
+
+        System.out.println("---------------------------");
+
+        System.out.println("---------------------------");
     }
 }
 
