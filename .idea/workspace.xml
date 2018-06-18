@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a2ba665b-8b22-4f71-8dc5-8309721ba36d" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/How-much-do-i-need.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/How-much-do-i-need.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AST121.csv" beforeDir="false" afterPath="$PROJECT_DIR$/old csv files/AST121.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BIO130.csv" beforeDir="false" afterPath="$PROJECT_DIR$/old csv files/BIO130.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSC165-Avg.csv" beforeDir="false" afterPath="$PROJECT_DIR$/old csv files/CSC165-Avg.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSC165.csv" beforeDir="false" afterPath="$PROJECT_DIR$/old csv files/CSC165.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Grade.py" beforeDir="false" afterPath="$PROJECT_DIR$/Grade.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MAT137-1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/old csv files/MAT137-1.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MAT137-2.csv" beforeDir="false" afterPath="$PROJECT_DIR$/old csv files/MAT137-2.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MAT223.csv" beforeDir="false" afterPath="$PROJECT_DIR$/old csv files/MAT223.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PSY100.csv" beforeDir="false" afterPath="$PROJECT_DIR$/old csv files/PSY100.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,44 +14,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Grade.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Grade.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="145" column="18" lean-forward="true" selection-start-line="145" selection-start-column="18" selection-end-line="145" selection-end-column="18" />
-              <folding>
-                <element signature="e#4#14#0" expanded="true" />
-                <element signature="e#1124#1865#0" />
-                <element signature="e#2044#2464#0" />
-                <element signature="e#2729#3024#0" />
-                <element signature="e#3076#3434#0" />
-                <element signature="e#4400#4448#0" />
-                <element signature="e#7437#7579#0" />
-                <element signature="e#7674#8058#0" />
-                <element signature="e#8094#8486#0" />
-                <element signature="e#8525#8755#0" />
-                <element signature="e#8795#9104#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="33" column="38" selection-start-line="33" selection-start-column="38" selection-end-line="33" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AST121.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/old csv files/AST121.csv">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -74,6 +29,7 @@
       <list>
         <option value="$PROJECT_DIR$/Grade.py" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/translate.java" />
       </list>
     </option>
   </component>
@@ -90,7 +46,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -102,6 +57,9 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -109,7 +67,7 @@
     <property name="options.lastSelected" value="configurable.group.tools" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.splitter.main.proportions" value="0.32666665" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -147,11 +105,6 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python.Grade" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -178,28 +131,43 @@
       <option name="project" value="LOCAL" />
       <updated>1529104344900</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Cleaned up code and updated README">
+      <created>1529106413303</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1529106413303</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="50" y="0" width="1320" height="772" extended-state="6" />
-    <editor active="true" />
+    <frame x="54" y="0" width="1312" height="768" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16844513" />
+      <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info id="Image Layers" order="2" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="6" side_tool="true" />
-      <window_info anchor="right" id="Run" order="4" visible="true" weight="0.051067073" />
+      <window_info anchor="right" id="Maven Projects" order="3" />
+      <window_info anchor="right" id="Run" order="4" weight="0.051067073" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Python Console" order="8" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Designer" order="2" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16844513" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="2" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info anchor="bottom" id="Debug" order="2" weight="0.3990461" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Data View" order="3" />
+      <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Python Console" order="8" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -214,7 +182,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="testing update using gitkraken" />
     <MESSAGE value="Pycharm is very picky with its formatting" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pycharm is very picky with its formatting" />
+    <MESSAGE value="Cleaned up code and updated README" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleaned up code and updated README" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -224,52 +193,39 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Grade.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1125">
-          <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="78" />
+        <state relative-caret-position="2175">
+          <caret line="145" column="18" selection-start-line="145" selection-start-column="18" selection-end-line="145" selection-end-column="18" />
           <folding>
-            <element signature="e#4#14#0" expanded="true" />
-            <element signature="e#1124#1865#0" />
-            <element signature="e#2044#2464#0" />
-            <element signature="e#2729#3024#0" />
-            <element signature="e#3076#3434#0" />
-            <element signature="e#4400#4448#0" />
-            <element signature="e#7437#7579#0" />
-            <element signature="e#7674#8058#0" />
-            <element signature="e#8094#8486#0" />
-            <element signature="e#8525#8755#0" />
-            <element signature="e#8795#9104#0" />
+            <element signature="e#68#78#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/old csv files/AST121.csv">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Grade.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2175">
+          <caret line="145" column="18" lean-forward="true" selection-start-line="145" selection-start-column="18" selection-end-line="145" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/old csv files/AST121.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Grade.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1125">
+          <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="78" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/old csv files/AST121.csv">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/testing.csv">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Grade.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="145" column="18" lean-forward="true" selection-start-line="145" selection-start-column="18" selection-end-line="145" selection-end-column="18" />
-          <folding>
-            <element signature="e#4#14#0" expanded="true" />
-            <element signature="e#1124#1865#0" />
-            <element signature="e#2044#2464#0" />
-            <element signature="e#2729#3024#0" />
-            <element signature="e#3076#3434#0" />
-            <element signature="e#4400#4448#0" />
-            <element signature="e#7437#7579#0" />
-            <element signature="e#7674#8058#0" />
-            <element signature="e#8094#8486#0" />
-            <element signature="e#8525#8755#0" />
-            <element signature="e#8795#9104#0" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
@@ -278,9 +234,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/old csv files/AST121.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Grade.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4855">
+          <caret line="18" column="33" lean-forward="true" selection-end-line="374" selection-end-column="23" />
+          <folding>
+            <element signature="e#68#78#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/translate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="39" lean-forward="true" selection-start-line="1" selection-start-column="39" selection-end-line="1" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ScopeChooserConfigurable.UI">
         <settings>
           <splitter-proportions>
