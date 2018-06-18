@@ -46,10 +46,57 @@ public class PythonToJava {
         }
     }
 
+    public static void howMuchDoINeed(String[] work, String[] weights, String[] grades, double fin) {
+        int counter = 0;
+        int missing_index = 0;
+        int a = 0;
+        double total_grade = 0;
+
+        while (a < grades.length) {
+            if (grades[a].equals("")) {
+                counter++;
+                missing_index = a;
+            }
+            else {
+                total_grade += Double.parseDouble(grades[a]) * Double.parseDouble(weights[a]) / 100.0;
+            }
+            a++;
+        }
+
+        if (counter > 1) {
+            System.out.println("Fill up the grades until only one is left blank please");
+            // Fill in method
+        }
+        else {
+            double howMuch = (fin - total_grade) * 100 / Double.parseDouble(weights[missing_index]);
+            System.out.println("You need " + howMuch + " on your " + work[missing_index] + " to get a final mark of " + fin);
+        }
+
+
+    }
+
+    // Functions
+    // Reading from stored files, making new files (auto make new files if no old files?)
+    // --------------------
+    // Properties of the files
+    // - Name of class
+    // - Names of assignments/tests
+    // - Weights of assignments/tests
+    // - Values of previously entered marks
+    // --------------------
+    // What we can do with the files
+    // - If there are no grades then get new ones
+    // - Fill in missing grades
+    // - Calculate current grade
+    // - Rewrite grades
+    // - Calculate how much you need
+
 
 
 
     public static void main(String args[]) {
+
+
 //        System.out.println("Wow you typed in a " + toDecimal());
 //
 //        double[] lst1 = {100};
