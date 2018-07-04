@@ -19,6 +19,7 @@ I want to add functionality for (in order of time):
 - Learn how to develop android
 - Change all the methods to java
 - Turn this into a published android app that anyone can use
+Check out my progress at <a href="https://github.com/MildlySpicy/Art3mis"> this github repository</a>.
 
 # Instructions
 
@@ -30,11 +31,12 @@ I want to add functionality for (in order of time):
 Thanks for reading,
 
 Jason
-
+<!-- 
 --------------------------------------
 
 Special Credit to David Choi who helped me math and check over my code (I'm braindead)
 
 Special credit to Hayley Vleck who was there and asked for credit
 
-And Noel Lance Gonzalez Oribello who is just special
+And Noel Lance Gonzalez Oribello who is just special -->
+
