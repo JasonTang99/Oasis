@@ -19,6 +19,7 @@ I want to add functionality for (in order of time):
 - Learn how to develop android
 - Change all the methods to java
 - Turn this into a published android app that anyone can use
+
 Check out my progress at <a href="https://github.com/MildlySpicy/Art3mis"> this github repository</a>.
 
 # Instructions
